@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Nature</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="script.js" defer></script>
+      <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <!-- custom js file link  -->
+   <script src="js/script.js" defer></script>
+   <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   background: #f9faf7;
+}
+
+.container{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+}
+
+.container .title{
+   font-size: 3.5rem;
+   color:#444;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+   font-family: GreatSejagad;
+}
+.container .title1{
+   font-size: 4rem;
+   color:#052dfa;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid #ccc;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+
+.container .products-container .product:hover{
+   outline: .2rem solid #222;
+   outline-offset: 0;
+}
+
+.container .products-container .product img{
+   height: 25rem;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+ 
+.container .products-container .product:hover h3{
+   color:#27ae60;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+
+.products-preview{
+   position: fixed;
+   top:0; left:0;
+   min-height: 100vh;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.products-preview .preview{
+   display: none;
+   padding:2rem;
+   text-align: center;
+   background: #fff;
+   position: relative;
+   margin:2rem;
+   width: 40rem;
+}
+
+.products-preview .preview.active{
+   display: inline-block;
+}
+
+.products-preview .preview img{
+   height: 30rem;
+}
+
+.products-preview .preview .fa-times{
+   position: absolute;
+   top:1rem; right:1.5rem;
+   cursor: pointer;
+   color:#444;
+   font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+   transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+   color:#444;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+.products-preview .preview .stars{
+   padding:1rem 0;
+   font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+   color:#27ae60;
+}
+
+.products-preview .preview .stars span{
+   color:#999;
+}
+
+.products-preview .preview p{
+   line-height: 1.5;
+   padding:1rem 0;
+   font-size: 1.6rem;
+   color:#777;
+}
+
+.products-preview .preview .price{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:#27ae60;
+}
+
+.products-preview .preview .buttons{
+   display: flex;
+   gap:1.5rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+}
+
+.products-preview .preview .buttons a{
+   flex:1 1 16rem;
+   padding:1rem;
+   font-size: 1.8rem;
+   color:#444;
+   border:.1rem solid #444;
+}
+
+.products-preview .preview .buttons a.cart{
+   background: #444;
+   color:#fff;
+}
+
+.products-preview .preview .buttons a.cart:hover{
+   background: #f8f6f6;
+   color: #070915;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+   background: #444;
+   color:#fff;
+}
+.listee{
+   font-size: 1.5rem;
+   list-style: none;
+   color: #070915;
+}
+
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   .products-preview .preview img{
+      height: 25rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+}
+    body{
+        background: url(d:\MY PROJECT\LOVE NATURE LOGO.jpg);
+    }
+
+    nav{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: medium;
+        display: flex;
+        border-bottom: 2px solid #525552;
+        margin: 0%;
+        border-top: 2px solid burlywood;
+        align-items: center;
+        background-color: rgb(245, 248, 248);
+        color: rgb(186, 171, 184);
+        height: 6%;
+    }
+    nav ul{
+        list-style: none;
+        display: flex;
+        margin: 0%;
+        align-items: right;
+    }
+    nav li{
+        text-decoration: none;
+        padding: 0.5rem;
+    }
+    nav a{
+        text-decoration: none;
+        padding: auto;
+        font-weight: 600;
+        display: block;
+        color: rgb(72, 72, 201);
+    }
+    nav li:hover{
+        color: rgb(238, 238, 234);
+        background-color: rgb(216, 252, 252);
+    }
+    nav a:hover{
+        color: rgb(3, 3, 3);
+    }
+    nav a:focus{
+        color: red;
+        
+    }
+    nav li:focus{
+      background-color: #fafafc;
+    }
+    .header{
+        align-items: center;
+        color: blue;
+        background-color: rgb(220, 220, 189);
+        font-size: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0%;
+        padding: 0%;
+    }
+    .headercontent{
+        color: rgb(9, 9, 9);
+        font-size: small;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size:60px;
+        align-items: center;
+        margin: 0% 30%;
+        padding: 0%;
+    }
+    .cardee-container{
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }         
+    .cardee{
+      width: 325px;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+      margin: 20px;
+    }
+    .cardee img{
+width: 100%;
+height: auto;
+    }
+    .cardee-content{
+      padding: 16px;
+    }
+    .cardee-content h3{
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .cardee-content p{
+      color: #666;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+    .cardee-content .btn{
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 16px;
+      color: #fff;
+
+    }
+    .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+    }
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(189, 240, 241);
+        color: rgb(11, 10, 10);
+        text-align: center;
+      }
+      .footer ul{
+         list-style: none;
+         display: flex;
+      }
+      .footer ul li{
+         display: block;
+         padding: 1rem 2rem;
+      }
+      .footer li{
+         font-size: 2rem;
+         color: #070915;
+      }
+      .footer li:hover{
+         color: #babebb;
+         background-color: #bef3d4;
+      }
+      .footer li:focus{
+         color: #f50404;
+         background-color: #f6f9f7;
+      }
+                                   
+</style>
+<script src="myscripts.js"></script>
+</head>
+<body>
+   <!--<div class="header"><a name="top"></a>
+        <P class="headercontent">L<i class="fa fa-tint" aria-hidden="true" style="color: rgb(250, 5, 5);"></i>VE NATURE</P>
+    </div>-->
+    <nav>
+        <ul>
+            <li><a href="file:///C:/Users/LENOVO/Desktop/LOVE%20NATURE/love%20nature%20site1.html#top"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="file:///C:/Users/LENOVO/Desktop/LOVE%20NATURE/love%20nature%20site1.html#products"><i class="fa-solid fa-cart-shopping"></i>  Products</a></li>
+            <li><a href="https://wa.me/message/K3N5S2JKMGVVG1"><i class="fa-solid fa-bag-shopping"></i>  Order now</a></li>
+            <li><a href="https://wa.me/message/K3N5S2JKMGVVG1"><i class="fa-solid fa-phone"></i>  Contact us</a></li>
+            <li><a href="https://wa.me/c/256774903873"><i class="fa-solid fa-comments"></i>  Consult</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slider section -->
+	<section class="slider">
+		<div class="container">
+		
+			  <div class="slider" data-slider>
+			  
+			<div class="slider-title">
+				<div>
+					<p class="titlee">OUR COLLECTION</p>
+					<p class="main_title">L<i class="fa fa-tint" aria-hidden="true" style="color: rgb(250, 5, 5);"></i>VE NATURE<i class="fa fa-leaf" aria-hidden="true" style="color: #27ae60;"></i></p>
+				</div>
+							  
+				<div class="slider__buttons">
+				  <button class="slider__button" data-slider-prev disabled>
+					<i class="fa fa-angle-left"></i>
+				  </button>
+				  <button class="slider__button" data-slider-next>
+					<i class="fa fa-angle-right"></i>
+				  </button>
+				</div>
+			</div>
+			  
+				<ul class="slider__track" data-slider-track>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0134.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\new\IMG-20231229-WA0203.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0111.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0112.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0113.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0114.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0115.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0116.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0117.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0118.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0119.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0120.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0121.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0122.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0123.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+				  </li>
+				  <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0124.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0125.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0127.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="d:\MY PROJECT\love nature\IMG-20231229-WA0128.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0129.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0130.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0131.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0132.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0133.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0135.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0136.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0137.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0138.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0139.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0140.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0141.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+              <li>
+					<div class="slide">
+						<img src="c:\Users\LENOVO\Desktop\LOVE NATURE\love nature\IMG-20231229-WA0142.jpg" class="slideimg" />
+						<div class="slide_content">
+							<p></p>
+						</div>
+					</div>
+				  </li>
+            
+				</ul>
+				
+				<div class="btns">
+					<a href="file:///C:/Users/LENOVO/Desktop/LOVE%20NATURE/love%20nature%20site1.html#products"><button>SHOW ALL</button></a>
+				</div>
+				
+			  </div>
+		</div>
+	</section>
+	<!-- Slider section End -->
+	
+<script src="script.js"></script>
+	
+
+    <div class="cardee-container"  >
+      <div class="cardee">
+         <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\castorr.jpg">
+         <div class="cardee-content">
+            <h3>Castor oil </h3>
+            <P>Castor oil is a non-volatile fatty oil that is derived from the seeds of the castor bean (Ricinus communis) plant, aka castor seeds.
+               What does castor oil do for your hair? Using castor oil helps your hair grow faster, thicker, stronger and shinier.
+
+
+
+Does castor oil regrow hair? Because it can improve blood circulation to your follicles, it may help to speed up hair growth.
+
+This is why some people apply it not only to hair on their head, but also to eyebrows and eyelashes.it is often used for treating skin diseases and skin ulcers, particularly those which are caused due to bacterial or fungal infections. Castor oil is also used to protect burns and wounds from infections and is extensively used as a skincare agent as it helps in treating acne, pigmentation, and sunburn, and preventing blemishes and stretch marks
+            </P>
+            <a href="https://draxe.com/nutrition/castor-oil/" class="btn">Read More</a>
+         </div>
+      </div>
+    </div>
+
+    <div class="cardee-container"  >
+      <div class="cardee">
+         <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\organic-baobab-oil-from-organically-africa.jpg">
+         <div class="cardee-content">
+            <h3>Boabab oil</h3>
+            <P>Baobab oil is a nutrient rich oil that comes from the seeds of the baobab tree, a characteristic tree of Africa. It contains antioxidants, vitamin A, vitamin E, and omega fatty acids that nourish and moisturize the skin and hair. It can help reduce the appearance of stretch marks. It has a lightweight, smooth texture that absorbs quickly and is not greasy
+               Because of its silky texture and unlike many other natural oils, Using baobab oil in massages is also a great way to help heal damaged skin, as it can help regenerate and restructure the skin cells. The oil quickly absorbs into the skin but does not leave it completely dry, due to its non-siccative properties.
+               Baobab oil may also act as an effective treatment of stretch marks, as well as other blemishes such as wrinkles, fine lines, and scars.
+            </P>
+            <a href="https://healthyfocus.org/baobab-oil-benefits/" class="btn">Read More</a>
+         </div>
+      </div>
+    </div>
+
+    <div class="cardee-container"  >
+      <div class="cardee">
+         <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\kukun2.jpg">
+         <div class="cardee-content">
+            <h3>Kukui Nuts</h3>
+            <P>Kukui nut oil is derived from the kukui nut tree. Most commonly used as a massage oil.
+
+               People often use kukui nut oil when they struggle with joint pain, a weak immune system, arthritis, psoriasis, eczema, dry skin, dandruff, wrinkles, and premature signs of aging, blemishes, burns, scars, fresh wounds, split ends, hair loss, stretch marks, and sunburn.
+               kukui nut oil is able to coat the skin and lock in moisture, thus preventing dry skin and dandruff that inevitably follows. helps to keep the hair follicles healthy and functioning, which can help prevent premature hair loss.
+               Dry, cracked skin of the hands and other parts of the body is not only painful but a perfect breeding ground for infection. applying a sheen of kukui nut oil can prevent easy breakage of the skin, and promote the growth of new cells.
+            </P>
+            <a href="https://www.organicfacts.net/health-benefits/oils/kukui-nut-oil.html" class="btn">Read More</a>
+         </div>
+      </div>
+    </div>
+
+    <div class="cardee-container"  >
+      <div class="cardee">
+         <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\OIP (4).jpg">
+         <div class="cardee-content">
+            <h3>Lavender</h3>
+            <P>Lavender oil is an essential oil derived from the lavender plant. 
+               Lavender oil can benefit the skin in numerous ways. It has the ability to lessen acne, help even skin tone, help clear dark spots and reduce wrinkles. It can even be used to treat other things, such as improving hair health 
+            </P>
+            <a href="https://www.healthline.com/health/lavender-oil-for-skin" class="btn">Read More</a>
+         </div>
+      </div>
+    </div>
+    <div class="cardee-container"  >
+      <div class="cardee">
+         <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\vitamin-healthy-breakfast-yogurt-oat-flakes-white-wooden-background-vitamin-healthy-breakfast-yogurt-oat-flakes-white-111312068.webp">
+         <div class="cardee-content">
+            <h3>OatMeal</h3>
+            <P>oatmeal is used for sensitive, allergy, or eczema-prone skin. It is an excellent moisturizer with skin healing, anti-inflammatory, antioxidant, and itch-relieving benefits.
+               Due to its anti-oxidant benefits, oats can help reverse damage caused by UV rays, pollution, harsh chemicals, etc., on your skin. 
+            </P>
+            <a href="https://dermatocare.com/blogs/10-benefits-of-using-oats-for-skin/" class="btn">Read More</a>
+         </div>
+      </div>
+    </div>
+    <div class="cardee-container"  >
+      <div class="cardee">
+         <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\OIP (1).jpg">
+         <div class="cardee-content">
+            <h3>Coffee Oil</h3>
+            <P>Coffee oil also known as the caffeol is extracted from coffe beans specifically the Arabica coffee.
+               Coffee beans are loaded with antioxidants, which clear the signs of aging. 
+                The caffeine content in coffee dilates blood vessels beneath the skin and stimulates overall blood flow, this improves the surface appearance of skin by making skin look tauter and shrinking those little dimples. 
+            </P>
+            <a href="https://www.primallifeorganics.com/blogs/primal-life-organics-blog/coffee-oil" class="btn">Read More</a>
+         </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <h3 class="title" name="products"><a name="products"></a> OUR PRODUCTS </h3>
+     
+        <div class="products-container">
+     
+           <div class="product" data-name="p-1">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231119_144711702.PORTRAIT~2.jpg" alt="black castor oil">
+              <h3>BLACK CASTOR OIL <b>200ml</b></h3>
+              <div class="price"><a href="#">30,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-2">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231119_144800863.jpg" alt="virgin castor oil">
+              <h3>VIRGIN CASTOR OIL</h3>
+              <div class="price"><a href="#">30,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-3">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121035936.PORTRAIT.ORIGINAL.jpg" alt="">
+              <h3>SOOTHING FOOT OIL</h3>
+              <div class="price"><a href="#">30,000 Ugx</a></div>
+           </div>
+     
+           
+           <div class="product" data-name="p-4">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231118_054346649.jpg" alt="">
+              <h3>KUKUI NUT OIL</h3>
+              <div class="price"><a href="#">30,000 Ugx</a></div>
+           </div>
+     
+     
+           <div class="product" data-name="p-5">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231118_054335579.jpg" alt="">
+              <h3>BOABAB OIL</h3>
+              <div class="price"><a href="#">30,000 Ugx</a></div>
+           </div>
+     
+     
+           <div class="product" data-name="p-6">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231118_054335579.jpg" alt="">
+              <h3>TRESS BUSTER OIL</h3>
+              <div class="price"><a href="#">40,000 Ugx</a></div>
+           </div>
+     
+     
+           <div class="product" data-name="p-7">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231024_051308409.PORTRAIT.jpg" alt="">
+              <h3>TEA TREE (FACIAL TONER)</h3>
+              <div class="price"><a href="#">15,000 Ugx</a></div>
+           </div>
+     
+     
+           <div class="product" data-name="p-8">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121207219.PORTRAIT.ORIGINAL.jpg" alt="">
+              <h3>LAVENDER (FACIAL TONER)</h3>
+              <div class="price"><a href="#">15,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-9">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121239611.PORTRAIT.ORIGINAL.jpg" alt="">
+              <h3>ROSEMARY (FACIAL TONER)</h3>
+              <div class="price"><a href="#">15,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-10">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122539465.PORTRAIT.jpg" alt="">
+              <h3>HAIR GROWTH CREAM</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-11">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122445026.PORTRAIT.jpg" alt="">
+              <h3>HAIR GRO</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-12">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122253394.PORTRAIT.jpg" alt="">
+              <h3>PALM KERNEL OIL</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-13">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122138370.PORTRAIT.jpg" alt="">
+              <h3>OLIVE BODY BUTTER</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-14">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122115067.PORTRAIT.jpg" alt="">
+              <h3>CAFEOL BUTTER</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-15">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121858393.PORTRAIT.jpg" alt="">
+              <h3>SHEA BUTTER</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-16">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121733186.PORTRAIT.jpg" alt="">
+              <h3>BABY AND TOTS BUTTER</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-17">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121826039.PORTRAIT.jpg" alt="">
+              <h3>COCOA BUTTER</h3>
+              <div class="price"><a href="#">15,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-18">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121627342.PORTRAIT.ORIGINAL.jpg" alt="">
+              <h3>TURMERIC BODY BUTTER</h3>
+              <div class="price"><a href="#">15,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-19">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121603461.PORTRAIT.jpg" alt="">
+              <h3>OATMEAL BUTTER</h3>
+              <div class="price"><a href="#">15,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-20">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121508109.PORTRAIT.jpg" alt="">
+              <h3>KANZI BUTTER</h3>
+              <div class="price"><a href="#">25,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-21">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122839333.PORTRAIT.jpg" alt="">
+              <h3>MOISTURISING OIL</h3>
+              <div class="price"><a href="#">20,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-22">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122920069.PORTRAIT.jpg" alt="">
+              <h3>FACIAL TONE DROPS</h3>
+              <div class="price"><a href="#">20,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-23">
+              <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122658476.PORTRAIT.jpg" alt="">
+              <h3>FACIAL RESTORE SERUM</h3>
+              <div class="price"><a href="#">20,000 Ugx</a></div>
+           </div>
+     
+           <div class="product" data-name="p-24">
+            <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\PXL_20231230_135323185.PORTRAIT.jpg" alt="">
+            <h3>BEARD OIL</h3>
+            <div class="price"><a href="#">15,000 Ugx</a></div>
+         </div>
+     
+     
+     
+        </div>
+     
+     </div>
+     
+     <div class="products-preview">
+     
+        <div class="preview" data-target="p-1">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231119_144711702.PORTRAIT~2.jpg" alt="">
+           <h3>Black Castor Oil</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Promotes hair growth</li>
+              <li>Darkens and thickens hair</li>
+              <li>Deeply moisturises skin</li>
+              <li>Reduces stretchmarks</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-2">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231119_144800863.jpg" alt="">
+           <h3>Virgin Castor Oil</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Promotes hair growth</li>
+              <li>Darkens and thickens hair</li>
+              <li>Deeply moisturises skin</li>
+              <li>Reduces stretchmarks</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-3">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121035936.PORTRAIT.ORIGINAL.jpg" alt="">
+           <h3>SOOTHING FOOT OIL</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Removes cracks on the feet</li>
+              <li>Its a massaging oil</li>
+              <li>Deeply moisturises skin</li>
+              <li>Reduces stretchmarks</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-4">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231118_054346649.jpg" alt="">
+           <h3>Kukui Nut Oil</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Moisturises skin</li>
+              <li>Reduces Wrinkles</li>
+              <li>Soothes dry and itchy skin</li>
+              <li>Reduces stretch marks</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+      
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+        <div class="preview" data-target="p-5">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231118_054335579.jpg" alt="">
+           <h3>Boabab Oil</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Moisturises Skin</li>
+              <li>Improves Skin Texture</li>
+              <li>Improves Skin Elasticity</li>
+              <li>Strengthens Hair</li>
+              <li>Moisturises Hair</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+        <div class="preview" data-target="p-6">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231118_054335579.jpg" alt="">
+           <h3>Tress Buster Oil</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Strengthens Hair Follicles</li>
+              <li>Reduces Hair Fall</li>
+              <li>Fastens Hair Growth</li>
+              <li>Thickens and Darkens Hair</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+              <a href="#" class="buy">buy now</a>
+              <a href="#" class="cart">add to cart</a>
+           </div>
+        </div>
+        <div class="preview" data-target="p-7">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121335030.PORTRAIT.ORIGINAL.jpg" alt="">
+           <h3>Tea Tree Facial Toner</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Helps with Acne</li>
+              <li>Promotes even skin tone</li>
+              <br />
+              <li>          </li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+     
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-8">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121207219.PORTRAIT.ORIGINAL.jpg" alt="">
+           <h3>Facial Toner (Lavender)</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Removes spots from the skin</li>
+              <li>Used for an even skin tone</li><br />
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+          
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-9">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121239611.PORTRAIT.ORIGINAL.jpg" alt="">
+           <h3>FACIAL TONER (ROSEMARY)</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Helps Hydrate the Skin</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-10">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122539465.PORTRAIT.jpg" alt="">
+           <h3>Hair Growth Cream</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Promotes hair growth</li>
+              <li>Darkens and thickens hair</li>
+              <li>Strengthens Hair</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+           
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-11">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122445026.PORTRAIT.jpg" alt="">
+           <h3>Hair Gro</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Promotes hair growth</li>
+              <li>Darkens and thickens hair</li>
+              <li>Strengthens hair follicles </li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+        <div class="preview" data-target="p-12">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122403908.PORTRAIT.jpg" alt="">
+           <h3>Palm Kernel Oil</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Promotes a natural skin glow</li>
+              <li>Deeply moisturises skin</li>
+              <li>Reduces stretchmarks</li>
+           </ul>
+           <!--<div class="price
+              ">$2.00</div>-->
+           <div class="buttons">
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-13">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122138370.PORTRAIT.jpg" alt="">
+           <h3>Olive Body Butter</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Nourishes The Skin</li>
+              <li>Promotes a Natural skin glow</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-14">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122115067.PORTRAIT.jpg" alt="">
+           <h3>Cafeol Butter (with coffee oil)</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Boasts collagen</li>
+              <li>Promotes a firm skin</li>
+              <li>Reduces wrinkles</li>
+              <li>Reduces stretchmarks</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+             
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-15">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121858393.PORTRAIT.jpg" alt="">
+           <h3>Shea Body Butter</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Moisturises the skin</li>
+              <li>Nourishes the skin</li>
+              <li>Reduces stretchmarks</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+          
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-16">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121733186.PORTRAIT.jpg" alt="">
+           <h3>Baby and Tots Butter</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Perfect for your baby's skin</li>
+              <li>Prevents rashes</li>
+              <li>Moisturises the skin</li>
+              <li>Nourishes the skin</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-17">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121826039.PORTRAIT.jpg" alt="">
+           <h3>Cocoa Butter</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Promotes a Natural skin glow</li>
+              <li>Nourishes the skin</li>
+              <li>Deeply moisturises skin</li>
+              <li>Helps with toning the skin</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+              
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-18">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121627342.PORTRAIT.ORIGINAL.jpg" alt="">
+           <h3>Turmeric Body Butter</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Helps fade acne scars</li>
+              <li>Removes Under Eye Dark Scars</li>
+              <li>Promotes an Even Skin Tone</li>
+              <li>Nourishes the Skin</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+         
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+        <div class="preview" data-target="p-19">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121607236.PORTRAIT.jpg" alt="">
+           <h3>Oatmeal Body Butter</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Prevents dry and itchy skin</li>
+              <li>Deeply moisturises skin</li>
+              <li>Clears skin rashes</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+        
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+        <div class="preview" data-target="p-20">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_121508109.PORTRAIT.jpg" alt="">
+           <h3>Kanzi Butter</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Helps to Remove Rashes</li>
+              <li>Helps with Itchy skin</li>
+              <li>Deeply moisturises skin</li>
+              <li>Nourishes the skin</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+             
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-21">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122808567.PORTRAIT.jpg" alt="">
+           <h3>Moisturising Oil</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Hydrates skin</li>
+              <li>Softens the skin</li>
+              <li>Deeply moisturises skin</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+            
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-22">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122920069.PORTRAIT.jpg" alt="">
+           <h3>Facial Tone Serum</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Promotes an even skin tone</li>
+              <li>Clears Dark spots</li>
+              <li>Helps with skin balacing</li>
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+      
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-23">
+           <i class="fas fa-times"></i>
+           <img src="d:\MY PROJECT\CASTOR BOTTLES\PXL_20231116_122651800.PORTRAIT.jpg" alt="">
+           <h3>Restore Facial Serum</h3>
+          <!--- <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>( 250 )</span>
+           </div> --->
+           <p>BENEFITS</p>
+           <ul class="listee">
+              <li>Helps to Remove Rashes</li>
+              <li>Helps with acne</li>     
+           </ul>
+           <!--<div class="price">$2.00</div>-->
+           <div class="buttons">
+         
+              <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+           </div>
+        </div>
+
+        
+        <div class="preview" data-target="p-24">
+         <i class="fas fa-times"></i>
+         <img src="c:\Users\LENOVO\Desktop\LOVE NATURE\images natur\PXL_20231230_135323185.PORTRAIT.jpg" alt="">
+         <h3>Beard Oil</h3>
+        <!--- <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+         </div> --->
+         <p>BENEFITS</p>
+         <ul class="listee">
+            <li>Helps with razor bumps</li>
+            <li>Keeps your beard dark and Thick</li>
+            <li>It keeps your Beard fully nourished</li>
+         </ul>
+         <!--<div class="price">$2.00</div>-->
+         <div class="buttons">
+        
+            <a href="https://wa.me/message/K3N5S2JKMGVVG1" class="cart">Buy Now</a>
+         </div>
+      </div>
+     </div>
+     <div class="footer">
+      
+        <ul>
+         <li>L<i class="fa fa-tint" aria-hidden="true" style="color: rgb(250, 5, 5);"></i>ve nature Socials</li>
+         <li><a href="https://wa.me/message/K3N5S2JKMGVVG1"><i class="fa-brands fa-whatsapp fa-beat"></i>   Whatsapp</a></li>
+         <li><a href="https://www.tiktok.com/@love.nature.skin?_t=8ihIk6IS102&_r=1"><i class="fa-brands fa-tiktok fa-flip"></i>  Tiktok</a></li>
+         <li><a href="https://www.instagram.com/invites/contact/?i=1bk2dt833cond&utm_content=tb13kbs"><i class="fa-brands fa-instagram fa-bounce"></i></i>  Instagram</a></li>
+         <li><a href="https://x.com/Lovenatureskin?t=Cgx4jKpi3XEfBC3sZQJ1SA&s=09"><i class="fa-brands fa-x-twitter fa-beat-fade"></i></i>  Twitter</a></li>
+         <li><a href="#"><i class="fa-brands fa-facebook fa-bounce"></i>  Facebook</a></li>
+         <li><a href="https://t.me/lovenatureskin"><i class="fa-sharp fa-solid fa-paper-plane fa-beat-fade"></i>   Telegram</a></li>
+        </ul>
+      <p><i class="fa-regular fa-copyright"></i>2024  L<i class="fa fa-tint" aria-hidden="true" style="color: rgb(250, 5, 5);"></i>ve nature skin. All rights reserved</p>
+      </div>
+      
+</body>
+</html>
